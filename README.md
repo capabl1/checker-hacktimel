@@ -10,6 +10,7 @@ https://github.com/capabl1/checker-hacktimel/assets/137472232/1db388e4-6e34-4b3d
 La source ressemble à n'importe quoi et y'a 0 organisation, c'est normal si vous comprennez rien et ne vous retrouvez pas
 C'est pareil pour ce readme, il est fait à l'arrache mais au moins j'ai mits un peu d'effort
 
+Ah et non pas besoin de dénicher ou quoi j'ai pas mits de stealer sayez on est en 2024 faut murire un peu
 | Fonctions     | Disponibilité |
 | ---      | ---       |
 | Trieur d'opérateur                  | ✅                               |
