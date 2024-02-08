@@ -1,0 +1,5 @@
+tls_client
+telebot
+phonenumbers
+bs4
+typing_extensions
