@@ -23,6 +23,7 @@ Ah et non pas besoin de dénicher ou quoi j'ai pas mits de stealer sayez on est 
 | Debouncer ML                    | ❌                     |
 
 
+### Si vous avez besoin d'aide -> @NEWS4CTIMEL 
 
 > [!NOTE]
 > Cetain fonctions marchent probablement plus et ont été patch suite à une modification externe ne concernant pas la source directement, notamment le checker netflix ML ( plus d'info en bas )
