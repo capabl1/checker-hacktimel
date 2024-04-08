@@ -17,7 +17,7 @@ Ah et non pas besoin de dénicher ou quoi j'ai pas mits de stealer sayez on est 
 | Bin checker         | ✅                               |
 | Checker Disney         | ✅             |
 | Checker amazon           | ✅                                  |
-| Checker netflix NL            | ✅                                |
+| Checker netflix NL            | ❌                                |
 | Checker netflix ML              | ❌                                      |
 | Générateur de Numéro                  | ✅                      |
 | Debouncer ML                    | ❌                     |
